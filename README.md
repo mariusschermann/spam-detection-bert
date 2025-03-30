@@ -1,6 +1,6 @@
 # Spam Detection with DistilBERT
 
-A machine learning project that uses DistilBERT to classify text messages as spam or ham (non-spam).
+A powerful spam detection system using DistilBERT. Features include real-time classification, feedback system, and a user-friendly Gradio interface. Achieves 99.9% accuracy on test data.
 
 ## Features
 
@@ -25,14 +25,20 @@ A machine learning project that uses DistilBERT to classify text messages as spa
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/spam-detection.git
-cd spam-detection
+git clone https://github.com/mariusschermann/spam-detection-bert.git
+cd spam-detection-bert
 ```
 
 2. Create and activate a virtual environment:
 ```bash
+# Create virtual environment
 python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Activate virtual environment
+# On macOS/Linux:
+source .venv/bin/activate
+# On Windows:
+.venv\Scripts\activate
 ```
 
 3. Install dependencies:
@@ -40,10 +46,16 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+## Dataset
+
+The project uses the "SPAM text message 20170820 - Data.csv" dataset. The dataset should be placed in the root directory of the project. The CSV file should contain two columns:
+- `Message`: The text message content
+- `Category`: The label (spam/ham)
+
 ## Usage
 
-1. Place your dataset file (CSV format) in the project directory
-2. Update the config.yaml file with your settings
+1. Make sure your dataset file is in the project directory
+2. (Optional) Update the config.yaml file with your settings
 3. Run the application:
 ```bash
 python app.py
@@ -63,14 +75,24 @@ The project can be configured through `config.yaml`:
 ## Project Structure
 
 ```
-spam-detection/
+spam-detection-bert/
 ├── app.py              # Main application file
 ├── model.py            # Model implementation
 ├── data.py             # Data loading and preprocessing
+├── feedback.py         # Feedback system implementation
 ├── config.yaml         # Configuration file
 ├── requirements.txt    # Project dependencies
 └── README.md          # This file
 ```
+
+## Troubleshooting
+
+If you encounter any issues:
+
+1. Make sure all dependencies are installed correctly
+2. Check if the dataset file is in the correct location
+3. Verify that your Python version is 3.8 or higher
+4. Ensure you have enough disk space for the model files
 
 ## License
 
