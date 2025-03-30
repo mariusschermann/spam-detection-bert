@@ -1,0 +1,26 @@
+model:
+  name: "distilbert-base-uncased"
+  num_classes: 2
+  dropout: 0.3
+  max_length: 128
+
+training:
+  device: "cpu"
+  batch_size: 128
+  learning_rate: 5.0e-5
+  epochs: 3
+  early_stopping_patience: 3
+  max_length: 128
+  num_workers: 8
+  seed: 42
+  mixed_precision: false
+
+data:
+  train_split: 0.7
+  val_split: 0.2
+  test_split: 0.1
+  max_length: 128
+
+paths:
+  data: "SPAM text message 20170820 - Data.csv"
+  models: "models" 
